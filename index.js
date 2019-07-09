@@ -1,3 +1,5 @@
+import { reverse } from "dns";
+
 // Code your solution here!
 function printString(string) {
     console.log(string[0])
@@ -11,11 +13,13 @@ function printString(string) {
 }
 
 function reverseString(string) {
-    let reversedString = string[string.length - 1]
-    if (string.length > 1) {
-        let newString = string.slice(0, -1)
-        reverseString(newString)
+    if (string.length <= 1) {
+        return string
     } else {
-        return reversedString
+        return reverseString(string.substring(1)) + string[0]
     }
+}
+
+function isPalindrome(string) {
+    
 }
