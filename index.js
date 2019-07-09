@@ -29,3 +29,19 @@ function isPalindrome(string) {
         return false
     }
 }
+
+function addUpTo(numArray, index) {
+    if (index < 1) {
+        return numArray[index] 
+    } else {
+        return numArray[index] + addUpTo(numArray, index - 1)
+    }
+}
+
+function maxOf(numArray) {
+    if (numArray.length < 2) {
+        return numArray[0]
+    } else {
+        return Math.max(numArray.pop(), maxOf(numArray))
+    }
+}
